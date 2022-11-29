@@ -2,7 +2,7 @@
 
 DBInteraction::DBInteraction(void)
 {
-	this->DB_Link = "Data Source = LAPTOP-PU6US03F ; Initial Catalog = Prosit6 ; User ID = CNX_P6 ; Password = CESIp6! ";
+	this->DB_Link = "Data Source=10.54.129.183;Initial Catalog=deltaStorageDatabase;Persist Security Info=True;User ID=antoine_ritter;Password=***********";
 
 	this->DB_txt_Commande = "";
 

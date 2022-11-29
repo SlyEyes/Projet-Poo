@@ -121,14 +121,32 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Address.cpp" />
+    <ClCompile Include="Article.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="Command.cpp" />
     <ClCompile Include="DBInteraction.cpp" />
+    <ClCompile Include="Employee.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="Payment.cpp" />
+    <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Statistics.cpp" />
+    <ClCompile Include="Table.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Address.h" />
+    <ClInclude Include="Article.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="Command.h" />
     <ClInclude Include="DBInteraction.h" />
+    <ClInclude Include="Employee.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Payment.h" />
+    <ClInclude Include="Person.h" />
+    <ClInclude Include="Statistics.h" />
+    <ClInclude Include="Table.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
