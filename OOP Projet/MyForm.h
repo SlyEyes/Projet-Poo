@@ -131,7 +131,9 @@ namespace Realisation {
 	private: System::Windows::Forms::Panel^ panelLogin;
 	private: System::Windows::Forms::Panel^ panelMainLogin;
 
-
+	private: System::String^ CheminLogo1 = Environment::CurrentDirectory + "\\bgIMG\\logo1.png";
+	private: System::String^ CheminLogo2 = Environment::CurrentDirectory + "\\bgIMG\\logo2.png";
+	private: System::String^ CheminLogo3 = Environment::CurrentDirectory + "\\bgIMG\\logo3.png";
 	private: System::Windows::Forms::Panel^ panelHeaderLogin;
 	private: System::Windows::Forms::Label^ labelTitleLogin;
 
@@ -656,7 +658,7 @@ namespace Realisation {
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(48, 16);
 			this->label1->TabIndex = 1;
-			this->label1->Text = L"Stonks";
+			this->label1->Text = CheminLogo3;
 			// 
 			// tabHelp
 			// 
@@ -1248,6 +1250,7 @@ namespace Realisation {
 			this->labelSubTitle->Name = L"labelSubTitle";
 			this->labelSubTitle->Size = System::Drawing::Size(255, 33);
 			this->labelSubTitle->TabIndex = 2;
+			this->labelSubTitle->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
 			// 
 			// labelTitle
 			// 
@@ -1374,7 +1377,6 @@ namespace Realisation {
 			this->panelHeader->ResumeLayout(false);
 			this->panelControlButton->ResumeLayout(false);
 			this->ResumeLayout(false);
-
 		}
 #pragma endregion
 	private: System::Void buttonClient_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1536,6 +1538,7 @@ namespace Realisation {
 			SubNavigationRemover();
 			tabController->SelectedTab = tabHelp;
 			labelSubTitle->Text = "";
+			this->Logo->Image = gcnew System::Drawing::Bitmap(CheminLogo3);
 		}
 	}
 
