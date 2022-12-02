@@ -41,16 +41,16 @@ namespace Realisation {
 
 
 	private: System::Windows::Forms::Panel^ panelSubNavigation;
-	private: System::Windows::Forms::Panel^ panelNavigation;
-	private: System::Windows::Forms::Panel^ panelButtonHelp;
-	private: System::Windows::Forms::Button^ buttonHelp;
-	private: System::Windows::Forms::Panel^ panelButtonNavigation;
-	private: System::Windows::Forms::Button^ buttonStatistics;
-	private: System::Windows::Forms::Button^ buttonCommand;
-	private: System::Windows::Forms::Button^ buttonStock;
-	private: System::Windows::Forms::Button^ buttonEmployee;
-	private: System::Windows::Forms::Button^ buttonClient;
-	private: System::Windows::Forms::Panel^ panelLogo;
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::Panel^ panelHeader;
 
 
@@ -74,8 +74,8 @@ namespace Realisation {
 	private: System::Windows::Forms::Button^ buttonClose;
 	private: System::Windows::Forms::Label^ labelTitle;
 
-	private: System::Windows::Forms::Panel^ panelComplement;
-	private: System::Windows::Forms::PictureBox^ Logo;
+
+
 	private: System::Windows::Forms::Panel^ panelSubButtonStock;
 	private: System::Windows::Forms::Panel^ panelSubButtonCommand;
 
@@ -131,6 +131,7 @@ namespace Realisation {
 	private: System::Windows::Forms::Panel^ panelLogin;
 	private: System::Windows::Forms::Panel^ panelMainLogin;
 
+	private: System::String^ Chemin = Environment::CurrentDirectory;
 	private: System::String^ CheminLogo1 = Environment::CurrentDirectory + "\\bgIMG\\logo1.png";
 	private: System::String^ CheminLogo2 = Environment::CurrentDirectory + "\\bgIMG\\logo2.png";
 	private: System::String^ CheminLogo3 = Environment::CurrentDirectory + "\\bgIMG\\logo3.png";
@@ -146,6 +147,22 @@ namespace Realisation {
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::Label^ label4;
 	private: System::Windows::Forms::Label^ labelSubTitle;
+private: System::Windows::Forms::Panel^ panelNavigation;
+private: System::Windows::Forms::Panel^ panelButtonNavigation;
+private: System::Windows::Forms::Button^ buttonStatistics;
+private: System::Windows::Forms::Button^ buttonCommand;
+private: System::Windows::Forms::Button^ buttonStock;
+private: System::Windows::Forms::Button^ buttonEmployee;
+private: System::Windows::Forms::Button^ buttonClient;
+private: System::Windows::Forms::Panel^ panelComplement;
+private: System::Windows::Forms::Panel^ panelButtonHelp;
+private: System::Windows::Forms::Button^ buttonHelp;
+private: System::Windows::Forms::Panel^ panelLogo;
+private: System::Windows::Forms::PictureBox^ Logo;
+private: System::Windows::Forms::ImageList^ imageList1;
+private: System::ComponentModel::IContainer^ components;
+
+
 
 
 
@@ -190,7 +207,7 @@ namespace Realisation {
 		/// <summary>
 		/// Required designer variable.
 		/// </summary>
-		System::ComponentModel::Container^ components;
+
 
 #pragma region Windows Form Designer generated code
 		/// <summary>
@@ -199,6 +216,7 @@ namespace Realisation {
 		/// </summary>
 		void InitializeComponent(void)
 		{
+			this->components = (gcnew System::ComponentModel::Container());
 			this->panelInterface = (gcnew System::Windows::Forms::Panel());
 			this->panelDisplay = (gcnew System::Windows::Forms::Panel());
 			this->tabController = (gcnew System::Windows::Forms::TabControl());
@@ -256,15 +274,15 @@ namespace Realisation {
 			this->buttonModifyClient = (gcnew System::Windows::Forms::Button());
 			this->buttonDisplayClient = (gcnew System::Windows::Forms::Button());
 			this->panelNavigation = (gcnew System::Windows::Forms::Panel());
-			this->panelComplement = (gcnew System::Windows::Forms::Panel());
-			this->panelButtonHelp = (gcnew System::Windows::Forms::Panel());
-			this->buttonHelp = (gcnew System::Windows::Forms::Button());
 			this->panelButtonNavigation = (gcnew System::Windows::Forms::Panel());
 			this->buttonStatistics = (gcnew System::Windows::Forms::Button());
 			this->buttonCommand = (gcnew System::Windows::Forms::Button());
 			this->buttonStock = (gcnew System::Windows::Forms::Button());
 			this->buttonEmployee = (gcnew System::Windows::Forms::Button());
 			this->buttonClient = (gcnew System::Windows::Forms::Button());
+			this->panelComplement = (gcnew System::Windows::Forms::Panel());
+			this->panelButtonHelp = (gcnew System::Windows::Forms::Panel());
+			this->buttonHelp = (gcnew System::Windows::Forms::Button());
 			this->panelLogo = (gcnew System::Windows::Forms::Panel());
 			this->Logo = (gcnew System::Windows::Forms::PictureBox());
 			this->panelHeader = (gcnew System::Windows::Forms::Panel());
@@ -274,6 +292,7 @@ namespace Realisation {
 			this->buttonMinimize = (gcnew System::Windows::Forms::Button());
 			this->buttonMaximize = (gcnew System::Windows::Forms::Button());
 			this->buttonClose = (gcnew System::Windows::Forms::Button());
+			this->imageList1 = (gcnew System::Windows::Forms::ImageList(this->components));
 			this->panelInterface->SuspendLayout();
 			this->panelDisplay->SuspendLayout();
 			this->tabController->SuspendLayout();
@@ -291,8 +310,8 @@ namespace Realisation {
 			this->panelSubButtonEmployee->SuspendLayout();
 			this->panelSubButtonClient->SuspendLayout();
 			this->panelNavigation->SuspendLayout();
-			this->panelButtonHelp->SuspendLayout();
 			this->panelButtonNavigation->SuspendLayout();
+			this->panelButtonHelp->SuspendLayout();
 			this->panelLogo->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->BeginInit();
 			this->panelHeader->SuspendLayout();
@@ -656,9 +675,8 @@ namespace Realisation {
 			this->label1->Location = System::Drawing::Point(437, 303);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(48, 16);
+			this->label1->Size = System::Drawing::Size(0, 16);
 			this->label1->TabIndex = 1;
-			this->label1->Text = CheminLogo3;
 			// 
 			// tabHelp
 			// 
@@ -1037,9 +1055,9 @@ namespace Realisation {
 			// panelNavigation
 			// 
 			this->panelNavigation->BackColor = System::Drawing::Color::DarkGray;
+			this->panelNavigation->Controls->Add(this->panelButtonNavigation);
 			this->panelNavigation->Controls->Add(this->panelComplement);
 			this->panelNavigation->Controls->Add(this->panelButtonHelp);
-			this->panelNavigation->Controls->Add(this->panelButtonNavigation);
 			this->panelNavigation->Controls->Add(this->panelLogo);
 			this->panelNavigation->Dock = System::Windows::Forms::DockStyle::Left;
 			this->panelNavigation->Location = System::Drawing::Point(0, 33);
@@ -1048,13 +1066,142 @@ namespace Realisation {
 			this->panelNavigation->Size = System::Drawing::Size(218, 687);
 			this->panelNavigation->TabIndex = 1;
 			// 
+			// panelButtonNavigation
+			// 
+			this->panelButtonNavigation->Controls->Add(this->buttonStatistics);
+			this->panelButtonNavigation->Controls->Add(this->buttonCommand);
+			this->panelButtonNavigation->Controls->Add(this->buttonStock);
+			this->panelButtonNavigation->Controls->Add(this->buttonEmployee);
+			this->panelButtonNavigation->Controls->Add(this->buttonClient);
+			this->panelButtonNavigation->Location = System::Drawing::Point(0, 100);
+			this->panelButtonNavigation->Margin = System::Windows::Forms::Padding(2);
+			this->panelButtonNavigation->Name = L"panelButtonNavigation";
+			this->panelButtonNavigation->Size = System::Drawing::Size(218, 227);
+			this->panelButtonNavigation->TabIndex = 2;
+			// 
+			// buttonStatistics
+			// 
+			this->buttonStatistics->BackColor = System::Drawing::Color::Transparent;
+			this->buttonStatistics->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->buttonStatistics->Dock = System::Windows::Forms::DockStyle::Top;
+			this->buttonStatistics->FlatAppearance->BorderSize = 0;
+			this->buttonStatistics->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonStatistics->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.142858F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonStatistics->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
+				static_cast<System::Int32>(static_cast<System::Byte>(67)));
+			this->buttonStatistics->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonStatistics->Location = System::Drawing::Point(0, 188);
+			this->buttonStatistics->Margin = System::Windows::Forms::Padding(2);
+			this->buttonStatistics->Name = L"buttonStatistics";
+			this->buttonStatistics->Size = System::Drawing::Size(218, 47);
+			this->buttonStatistics->TabIndex = 4;
+			this->buttonStatistics->Text = L"      Statistics";
+			this->buttonStatistics->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonStatistics->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->buttonStatistics->UseVisualStyleBackColor = false;
+			this->buttonStatistics->Click += gcnew System::EventHandler(this, &Interface::buttonStatistics_Click);
+			// 
+			// buttonCommand
+			// 
+			this->buttonCommand->BackColor = System::Drawing::Color::Transparent;
+			this->buttonCommand->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->buttonCommand->Dock = System::Windows::Forms::DockStyle::Top;
+			this->buttonCommand->FlatAppearance->BorderSize = 0;
+			this->buttonCommand->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonCommand->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.142858F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonCommand->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
+				static_cast<System::Int32>(static_cast<System::Byte>(67)));
+			this->buttonCommand->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonCommand->Location = System::Drawing::Point(0, 141);
+			this->buttonCommand->Margin = System::Windows::Forms::Padding(2);
+			this->buttonCommand->Name = L"buttonCommand";
+			this->buttonCommand->Size = System::Drawing::Size(218, 47);
+			this->buttonCommand->TabIndex = 3;
+			this->buttonCommand->Text = L"      Command";
+			this->buttonCommand->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonCommand->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->buttonCommand->UseVisualStyleBackColor = false;
+			this->buttonCommand->Click += gcnew System::EventHandler(this, &Interface::buttonCommand_Click);
+			// 
+			// buttonStock
+			// 
+			this->buttonStock->BackColor = System::Drawing::Color::Transparent;
+			this->buttonStock->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->buttonStock->Dock = System::Windows::Forms::DockStyle::Top;
+			this->buttonStock->FlatAppearance->BorderSize = 0;
+			this->buttonStock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonStock->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.142858F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
+				static_cast<System::Int32>(static_cast<System::Byte>(67)));
+			this->buttonStock->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonStock->Location = System::Drawing::Point(0, 94);
+			this->buttonStock->Margin = System::Windows::Forms::Padding(2);
+			this->buttonStock->Name = L"buttonStock";
+			this->buttonStock->Size = System::Drawing::Size(218, 47);
+			this->buttonStock->TabIndex = 2;
+			this->buttonStock->Text = L"      Stock";
+			this->buttonStock->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonStock->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->buttonStock->UseVisualStyleBackColor = false;
+			this->buttonStock->Click += gcnew System::EventHandler(this, &Interface::buttonStock_Click);
+			// 
+			// buttonEmployee
+			// 
+			this->buttonEmployee->BackColor = System::Drawing::Color::Transparent;
+			this->buttonEmployee->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->buttonEmployee->Dock = System::Windows::Forms::DockStyle::Top;
+			this->buttonEmployee->FlatAppearance->BorderSize = 0;
+			this->buttonEmployee->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonEmployee->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.142858F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonEmployee->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
+				static_cast<System::Int32>(static_cast<System::Byte>(67)));
+			this->buttonEmployee->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonEmployee->Location = System::Drawing::Point(0, 47);
+			this->buttonEmployee->Margin = System::Windows::Forms::Padding(2);
+			this->buttonEmployee->Name = L"buttonEmployee";
+			this->buttonEmployee->Size = System::Drawing::Size(218, 47);
+			this->buttonEmployee->TabIndex = 1;
+			this->buttonEmployee->Text = L"      Employee";
+			this->buttonEmployee->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonEmployee->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->buttonEmployee->UseVisualStyleBackColor = false;
+			this->buttonEmployee->Click += gcnew System::EventHandler(this, &Interface::buttonEmployee_Click);
+			// 
+			// buttonClient
+			// 
+			this->buttonClient->BackColor = System::Drawing::Color::Transparent;
+			this->buttonClient->Cursor = System::Windows::Forms::Cursors::Hand;
+			this->buttonClient->Dock = System::Windows::Forms::DockStyle::Top;
+			this->buttonClient->FlatAppearance->BorderSize = 0;
+			this->buttonClient->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+			this->buttonClient->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.142858F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+				static_cast<System::Byte>(0)));
+			this->buttonClient->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
+				static_cast<System::Int32>(static_cast<System::Byte>(67)));
+			this->buttonClient->ImageAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonClient->Location = System::Drawing::Point(0, 0);
+			this->buttonClient->Margin = System::Windows::Forms::Padding(2);
+			this->buttonClient->Name = L"buttonClient";
+			this->buttonClient->RightToLeft = System::Windows::Forms::RightToLeft::No;
+			this->buttonClient->Size = System::Drawing::Size(218, 47);
+			this->buttonClient->TabIndex = 0;
+			this->buttonClient->Text = L"      Client";
+			this->buttonClient->TextAlign = System::Drawing::ContentAlignment::MiddleLeft;
+			this->buttonClient->TextImageRelation = System::Windows::Forms::TextImageRelation::ImageBeforeText;
+			this->buttonClient->UseVisualStyleBackColor = false;
+			this->buttonClient->Click += gcnew System::EventHandler(this, &Interface::buttonClient_Click);
+			// 
 			// panelComplement
 			// 
 			this->panelComplement->Dock = System::Windows::Forms::DockStyle::Fill;
-			this->panelComplement->Location = System::Drawing::Point(0, 327);
+			this->panelComplement->Location = System::Drawing::Point(0, 100);
 			this->panelComplement->Margin = System::Windows::Forms::Padding(2);
 			this->panelComplement->Name = L"panelComplement";
-			this->panelComplement->Size = System::Drawing::Size(218, 313);
+			this->panelComplement->Size = System::Drawing::Size(218, 540);
 			this->panelComplement->TabIndex = 4;
 			// 
 			// panelButtonHelp
@@ -1085,120 +1232,6 @@ namespace Realisation {
 			this->buttonHelp->Text = L"Help";
 			this->buttonHelp->UseVisualStyleBackColor = false;
 			this->buttonHelp->Click += gcnew System::EventHandler(this, &Interface::buttonHelp_Click);
-			// 
-			// panelButtonNavigation
-			// 
-			this->panelButtonNavigation->Controls->Add(this->buttonStatistics);
-			this->panelButtonNavigation->Controls->Add(this->buttonCommand);
-			this->panelButtonNavigation->Controls->Add(this->buttonStock);
-			this->panelButtonNavigation->Controls->Add(this->buttonEmployee);
-			this->panelButtonNavigation->Controls->Add(this->buttonClient);
-			this->panelButtonNavigation->Dock = System::Windows::Forms::DockStyle::Top;
-			this->panelButtonNavigation->Location = System::Drawing::Point(0, 100);
-			this->panelButtonNavigation->Margin = System::Windows::Forms::Padding(2);
-			this->panelButtonNavigation->Name = L"panelButtonNavigation";
-			this->panelButtonNavigation->Size = System::Drawing::Size(218, 227);
-			this->panelButtonNavigation->TabIndex = 2;
-			// 
-			// buttonStatistics
-			// 
-			this->buttonStatistics->BackColor = System::Drawing::Color::Transparent;
-			this->buttonStatistics->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->buttonStatistics->Dock = System::Windows::Forms::DockStyle::Top;
-			this->buttonStatistics->FlatAppearance->BorderSize = 0;
-			this->buttonStatistics->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonStatistics->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.142858F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->buttonStatistics->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
-				static_cast<System::Int32>(static_cast<System::Byte>(67)));
-			this->buttonStatistics->Location = System::Drawing::Point(0, 188);
-			this->buttonStatistics->Margin = System::Windows::Forms::Padding(2);
-			this->buttonStatistics->Name = L"buttonStatistics";
-			this->buttonStatistics->Size = System::Drawing::Size(218, 47);
-			this->buttonStatistics->TabIndex = 4;
-			this->buttonStatistics->Text = L"Statistics";
-			this->buttonStatistics->UseVisualStyleBackColor = false;
-			this->buttonStatistics->Click += gcnew System::EventHandler(this, &Interface::buttonStatistics_Click);
-			// 
-			// buttonCommand
-			// 
-			this->buttonCommand->BackColor = System::Drawing::Color::Transparent;
-			this->buttonCommand->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->buttonCommand->Dock = System::Windows::Forms::DockStyle::Top;
-			this->buttonCommand->FlatAppearance->BorderSize = 0;
-			this->buttonCommand->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonCommand->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.142858F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->buttonCommand->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
-				static_cast<System::Int32>(static_cast<System::Byte>(67)));
-			this->buttonCommand->Location = System::Drawing::Point(0, 141);
-			this->buttonCommand->Margin = System::Windows::Forms::Padding(2);
-			this->buttonCommand->Name = L"buttonCommand";
-			this->buttonCommand->Size = System::Drawing::Size(218, 47);
-			this->buttonCommand->TabIndex = 3;
-			this->buttonCommand->Text = L"Command";
-			this->buttonCommand->UseVisualStyleBackColor = false;
-			this->buttonCommand->Click += gcnew System::EventHandler(this, &Interface::buttonCommand_Click);
-			// 
-			// buttonStock
-			// 
-			this->buttonStock->BackColor = System::Drawing::Color::Transparent;
-			this->buttonStock->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->buttonStock->Dock = System::Windows::Forms::DockStyle::Top;
-			this->buttonStock->FlatAppearance->BorderSize = 0;
-			this->buttonStock->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonStock->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.142858F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->buttonStock->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
-				static_cast<System::Int32>(static_cast<System::Byte>(67)));
-			this->buttonStock->Location = System::Drawing::Point(0, 94);
-			this->buttonStock->Margin = System::Windows::Forms::Padding(2);
-			this->buttonStock->Name = L"buttonStock";
-			this->buttonStock->Size = System::Drawing::Size(218, 47);
-			this->buttonStock->TabIndex = 2;
-			this->buttonStock->Text = L"Stock";
-			this->buttonStock->UseVisualStyleBackColor = false;
-			this->buttonStock->Click += gcnew System::EventHandler(this, &Interface::buttonStock_Click);
-			// 
-			// buttonEmployee
-			// 
-			this->buttonEmployee->BackColor = System::Drawing::Color::Transparent;
-			this->buttonEmployee->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->buttonEmployee->Dock = System::Windows::Forms::DockStyle::Top;
-			this->buttonEmployee->FlatAppearance->BorderSize = 0;
-			this->buttonEmployee->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonEmployee->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.142858F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->buttonEmployee->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
-				static_cast<System::Int32>(static_cast<System::Byte>(67)));
-			this->buttonEmployee->Location = System::Drawing::Point(0, 47);
-			this->buttonEmployee->Margin = System::Windows::Forms::Padding(2);
-			this->buttonEmployee->Name = L"buttonEmployee";
-			this->buttonEmployee->Size = System::Drawing::Size(218, 47);
-			this->buttonEmployee->TabIndex = 1;
-			this->buttonEmployee->Text = L"Employee";
-			this->buttonEmployee->UseVisualStyleBackColor = false;
-			this->buttonEmployee->Click += gcnew System::EventHandler(this, &Interface::buttonEmployee_Click);
-			// 
-			// buttonClient
-			// 
-			this->buttonClient->BackColor = System::Drawing::Color::Transparent;
-			this->buttonClient->Cursor = System::Windows::Forms::Cursors::Hand;
-			this->buttonClient->Dock = System::Windows::Forms::DockStyle::Top;
-			this->buttonClient->FlatAppearance->BorderSize = 0;
-			this->buttonClient->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-			this->buttonClient->Font = (gcnew System::Drawing::Font(L"Century Gothic", 8.142858F, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
-				static_cast<System::Byte>(0)));
-			this->buttonClient->ForeColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(47)), static_cast<System::Int32>(static_cast<System::Byte>(62)),
-				static_cast<System::Int32>(static_cast<System::Byte>(67)));
-			this->buttonClient->Location = System::Drawing::Point(0, 0);
-			this->buttonClient->Margin = System::Windows::Forms::Padding(2);
-			this->buttonClient->Name = L"buttonClient";
-			this->buttonClient->Size = System::Drawing::Size(218, 47);
-			this->buttonClient->TabIndex = 0;
-			this->buttonClient->Text = L"Client";
-			this->buttonClient->UseVisualStyleBackColor = false;
-			this->buttonClient->Click += gcnew System::EventHandler(this, &Interface::buttonClient_Click);
 			// 
 			// panelLogo
 			// 
@@ -1328,6 +1361,12 @@ namespace Realisation {
 			this->buttonClose->UseVisualStyleBackColor = true;
 			this->buttonClose->Click += gcnew System::EventHandler(this, &Interface::buttonClose_Click);
 			// 
+			// imageList1
+			// 
+			this->imageList1->ColorDepth = System::Windows::Forms::ColorDepth::Depth8Bit;
+			this->imageList1->ImageSize = System::Drawing::Size(16, 16);
+			this->imageList1->TransparentColor = System::Drawing::Color::Transparent;
+			// 
 			// Interface
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -1370,13 +1409,14 @@ namespace Realisation {
 			this->panelSubButtonEmployee->ResumeLayout(false);
 			this->panelSubButtonClient->ResumeLayout(false);
 			this->panelNavigation->ResumeLayout(false);
-			this->panelButtonHelp->ResumeLayout(false);
 			this->panelButtonNavigation->ResumeLayout(false);
+			this->panelButtonHelp->ResumeLayout(false);
 			this->panelLogo->ResumeLayout(false);
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->Logo))->EndInit();
 			this->panelHeader->ResumeLayout(false);
 			this->panelControlButton->ResumeLayout(false);
 			this->ResumeLayout(false);
+
 		}
 #pragma endregion
 	private: System::Void buttonClient_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -1539,6 +1579,11 @@ namespace Realisation {
 			tabController->SelectedTab = tabHelp;
 			labelSubTitle->Text = "";
 			this->Logo->Image = gcnew System::Drawing::Bitmap(CheminLogo3);
+			this->buttonClient->Image = gcnew System::Drawing::Bitmap(Chemin+"\\bgIMG\\gens.png");
+			this->buttonEmployee->Image = gcnew System::Drawing::Bitmap(Chemin + "\\bgIMG\\directeur.png");
+			this->buttonStock->Image = gcnew System::Drawing::Bitmap(Chemin + "\\bgIMG\\des-boites.png");
+			this->buttonCommand->Image = gcnew System::Drawing::Bitmap(Chemin + "\\bgIMG\\bon-de-commande.png");
+			this->buttonStatistics->Image = gcnew System::Drawing::Bitmap(Chemin + "\\bgIMG\\graphique.png");
 		}
 	}
 
@@ -1562,5 +1607,8 @@ namespace Realisation {
 	}
 	private: System::Void Logo_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	};
+
+private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+};
 }
